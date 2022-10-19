@@ -1,0 +1,32 @@
+@import '../../vars.scss';
+
+.palette__col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    h1 {
+        font-size: calc(var(--index) * 1.5);
+        padding: 10px;
+        border-radius: var(--radius);
+        transition: var(--hover-transition);
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgba($color: #ffffff, $alpha: 0.1);
+        }
+    }
+
+    button {
+        font-size: calc(var(--index) * 1);
+        transition: var(--hover-transition);
+        border-radius: var(--radius);
+        padding: 10px;
+
+        &:hover {
+            background-color: rgba($color: #ffffff, $alpha: 0.1);
+        }
+    }
+}

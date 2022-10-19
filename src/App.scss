@@ -1,0 +1,16 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    font-size: 10px;
+}
+
+button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background: none;
+}
