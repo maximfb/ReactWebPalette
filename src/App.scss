@@ -17,3 +17,6 @@ button {
     cursor: pointer;
     background: none;
 }
+
+.alert-default {background-color: transparent;}
+.alert-info {background-color: rgba($color: #000000, $alpha: 0.2);}
