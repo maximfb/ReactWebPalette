@@ -6,7 +6,6 @@ import { HIDE, SHOW } from '../types';
 const AlertStore = ({ children }) => {
     const initialState = { text: '', type: 'default', visible: false };
     const [ state, dispatch ] = useReducer(alertReducer, initialState);
-    console.log(state);
     const show = (text, type, ms = 3000) => {
         dispatch({
             type: SHOW,
