@@ -13,20 +13,25 @@ const PaletteItem = (props) => {
 
     // eslint-disable-next-line
     useEffect(() => props.updateColors(isNewColor), [ isNewColor ]);
-    // useEffect(() => props.updateColors(props.color), [ palette ]);
 
-    const copy = text => copyToClick(text)
-        .then(() => show('Copied!', 'info', 800));
+    const copy = (e, text) => {
+        e.stopPropagation();
+        copyToClick(text).then(() => show('Copied!', 'info', 800));
+    }
+    const lock = (e, id) => {
+        e.stopPropagation();
+        props.lockChange(id);
+    }
 
     return (
         <div style={{ backgroundColor: props.color }} className={styles.palette__col}>
             <h1
                 style={{ color: useColor.getLuminanceColor(props.color) }}
-                onClick={() => copy(props.color)}
+                onClick={e => copy(e, props.color)}
             >
                 {props.color || ''}
             </h1>
-            <button type="button" onClick={() => props.lockChange(props.id)}>
+            <button type="button" onClick={e => lock(e, props.id)}>
                 <i
                     style={{ color: useColor.getLuminanceColor(props.color) }}
                     className={`fa-solid ${props.lock ? 'fa-lock' : 'fa-lock-open'}`}>

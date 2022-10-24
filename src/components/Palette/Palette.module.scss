@@ -1,4 +1,8 @@
 .palette {
     display: flex;
     min-height: 100vh;
+    
+    @media  (max-width: 530px) {
+        flex-direction: column;
+    }
 }
